@@ -1,95 +1,67 @@
-import React, { useState } from 'react';
-import { Link, useHistory } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
+import { Form, Input } from '@rocketseat/unform';
+import { useDispatch } from 'react-redux';
+import { signUpRequest } from '../../store/modules/auth/actions';
 
-import api from '../../services/api';
-import './styles.css';
+import logoImg from '~/assets/logo.svg';
 
-import logoImg from '../../assets/logo.svg';
+import {
+  Container,
+  Content,
+  Section,
+  FormRegister,
+  InputGroup,
+} from './styles';
 
 export default function Register() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [whatsapp, setWhatsapp] = useState('');
-  const [city, setCity] = useState('');
-  const [uf, setUf] = useState('');
-  
-  const history = useHistory();
+  const dispatch = useDispatch();
 
-  async function handleRegister(e) {
-    e.preventDefault();
-
-    const data = {
-      name,
-      email,
-      whatsapp,
-      city,
-      uf,
-    };
-
-    try {
-      const response = await api.post('ongs', data);
-
-      alert(`Seu ID de acesso: ${response.data.id}`);
-
-      history.push('/');
-    } catch (err) {
-      alert('Erro no cadastro, tente novamente.');
-    }
+  function handleSubmit({ name, email, password, whatsapp, city, uf }) {
+    dispatch(signUpRequest(name, email, password, whatsapp, city, uf));
   }
 
   return (
-    <div className="register-container">
-      <div className="content">
-        <section>
-          <img src={logoImg} alt="Be The Hero"/>
+    <Container>
+      <Content>
+        <Section>
+          <img src={logoImg} alt="Be The Hero" />
 
           <h1>Cadastro</h1>
-          <p>Faça seu Cadastro, entre na plataforma e ajude pessoas a encontrarem os casos da sua ONG.</p>
-        
+          <p>
+            Faça seu Cadastro, entre na plataforma e ajude pessoas a encontrarem
+            os casos da sua ONG.
+          </p>
+
           <Link className="back-link" to="/">
             <FiArrowLeft size={16} color="#E02041" />
             Voltar para o logon
           </Link>
-        </section>
+        </Section>
 
-        <form onSubmit={handleRegister}>
-          <input 
-            placeholder="Nome da ONG"
-            value={name}
-            onChange={e => setName(e.target.value)}
-          />
+        <FormRegister>
+          <Form onSubmit={handleSubmit}>
+            <Input name="name" placeholder="Nome da ONG" />
 
-          <input type="email"
-            placeholder="E-mail"
-            value={email}
-            onChange={e => setEmail(e.target.value)}  
-          />
+            <Input name="email" type="email" placeholder="E-mail" />
 
-          <input 
-            placeholder="WhatsApp"
-            value={whatsapp}
-            onChange={e => setWhatsapp(e.target.value)}
-          />
+            <Input name="password" type="password" placeholder="senha" />
 
-          <div className="input-group">
-            <input 
-              placeholder="Cidade"
-              value={city}
-              onChange={e => setCity(e.target.value)}
-            />
+            <Input name="whatsapp" placeholder="WhatsApp" />
 
-            <input 
-              placeholder="UF" 
-              style={{ width: 80 }} 
-              value={uf}
-              onChange={e => setUf(e.target.value)}
-            />
-          </div>
+            <InputGroup>
+              <Input name="city" placeholder="Cidade" />
 
-          <button className="button" type="submit">Cadastrar</button>
-        </form>
-      </div>
-    </div>
-  )
+              <Input name="uf" placeholder="UF" style={{ width: 80 }} />
+            </InputGroup>
+
+            <button className="button" type="submit">
+              Cadastrar
+            </button>
+          </Form>
+        </FormRegister>
+      </Content>
+    </Container>
+  );
 }
