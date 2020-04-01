@@ -23,18 +23,28 @@
         target="_blank" >
     <img alt="Fale comigo no whatsapp - Felipe Santiago" src="https://img.shields.io/badge/Whatsapp--%23F8952D?style=social&logo=whatsapp">
   </a>
-  <a href="https://insomnia.rest/run/?label=be-the-hero&uri=https%3A%2F%2Fraw.githubusercontent.com%2Ffelsantiago%2Fbe-the-hero%2Fmaster%2FInsomnia_Be_The_Hero.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia" width="90px"></a>
 </p>
+
+<div align="center">
+
+<a href="https://insomnia.rest/run/?label=be-the-hero&uri=https%3A%2F%2Fraw.githubusercontent.com%2Ffelsantiago%2Fbe-the-hero%2Fmaster%2FInsomnia_Be_The_Hero.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia" width="90px"></a>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0edbe6eb-b04a-4d61-aee9-35d2684d0423/deploy-status)](https://app.netlify.com/sites/heuristic-neumann-9d1978/deploys)
+
+</div>
 
 <h1 align="center">
     <img alt="Be the Hero" src="https://user-images.githubusercontent.com/52730086/78100734-e2d65f80-73bb-11ea-8aa0-86c573fddca1.png"  width="350px" style="border-radius:16px;"/>
 </h1>
 
 <p align="center">
+  Teste agora mesmo: <a href="https://5e82dac92bd030000806ad0a--heuristic-neumann-9d1978.netlify.com/">Be The Hero - Demo</a>
+</p>
+
+<p align="center">
   <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-como-contribuir">Como contribuir</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#❤️-modificações">Modificações</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#💻-screen">Screen</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#🤔-como-contribuir">Como contribuir</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-licença">Licença</a>
 </p>
 
@@ -63,7 +73,7 @@ Extras:
   - [ESLint](https://eslint.org/)
   - [Prettier](https://prettier.io/)
 
-## Modificações
+## ❤️ Modificações
 
 1. Quando o usuário está logado e acessa o login, ele será redirecionado para o perfil novamente
 2. Rotas Privadas -> Se o usuário não estiver logado e acessar a rota 'profile', ele será redirecionado para a tela inicial
