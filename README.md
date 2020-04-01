@@ -76,8 +76,8 @@ Extras:
 ## ❤️ Modificações
 
 1. Quando o usuário está logado e acessa o login, ele será redirecionado para o perfil novamente
-2. Rotas Privadas -> Se o usuário não estiver logado e acessar a rota 'profile', ele será redirecionado para a tela inicial
-3. Send Email to the NGO with the authentication ID after registering the same
+2. Se o usuário não estiver logado e acessar a rota 'profile', ele será redirecionado para a tela inicial
+3. Rotas Privadas
 4. Cadastro único de ONG por email e Autenticação JWT
 5. Tema escuro e tema claro, na Web e em dispositivos móveis
 6. Frontend responsivo
